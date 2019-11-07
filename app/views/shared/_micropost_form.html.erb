@@ -1,0 +1,9 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <!--引数で、パーシャル先にローカル変数を渡すことができる。f.objectを@micropostにしても、ここでは上手くいくが、今まで作ってきた@user側で_error_messages-->
+  <!--を呼び出す時に、@micropostがないといって失敗する。-->
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>
